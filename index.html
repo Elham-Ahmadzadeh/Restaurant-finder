@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/load-awesome-1.1.0/pacman.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <title>Restaurant Finder</title>
+</head>
+
+<body>
+<div class="container" >
+    <header class="header" id="header">
+        
+        <ul class="back-to-search">
+          
+            <button class="prev"><span></span></button>
+        </ul>
+
+       
+    </header>
+
+
+    <main>
+
+
+        <!-- SEARCH INPUT -->
+        <article class="wrapper hidden">
+            <form class="input-form" name="search-form" >
+                <input id="search-term" required class="search-city" name="search-city" placeholder="City" autocomplete="on" runat="server">
+                <input type="hidden" id="cityLat" name="cityLat">
+                <input type="hidden" id="cityLng" name="cityLong">
+
+                <!-- SEARCH CUISINE -->
+                <input id="cuisine" required list="cuisine-search" class="search-cuisine" placeholder="Cuisine">
+                <datalist id="cuisine-search">
+                    <option id="cuisineOptions" value="Arabian"></option>
+                    <option id="cuisineOptions" value="Italian"></option>
+                    <option id="cuisineOptions" value="Indian"></option>
+                    <option id="cuisineOptions" value="Chinese"></option>
+                    <option id="cuisineOptions" value="Asian"></option>
+                    <option id="cuisineOptions" value="French"></option>
+                    <option id="cuisineOptions" value="Mediteranean"></option>
+                    <option id="cuisineOptions" value="European"></option>
+                </datalist>
+
+                <button type="submit"   id="search-btn">Search</button>
+
+            </form>
+
+
+            <article class="modal">
+                <article class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h1>No Results. Please come back</h1>
+                </article>
+            </article>
+
+            <div style="display: none" class="la-timer la-dark la-3x">
+                <div></div>
+            </div>
+
+
+            <!-- SEARCH RESULTS -->
+            <section id="results" class="hidden">
+                <ul id="result-items">
+                </ul>
+            </section>
+
+        </article>
+
+
+
+    </main>
+  
+</div>
+<footer>
+<canvas id="barChart" width="400" height="200"></canvas>
+</footer>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?
+    v=3.exp&libraries=places,geometry&key=AIzaSyBoRpN_--w3lFXRNu1PIv_cho5xqP1E32s"></script>
+ 
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>
